@@ -31,7 +31,7 @@ jobs:
       # Run tests and collect coverage data
       - name: Run tests
         run: |
-          npm test -- --coverage --watchAll=false
+          npm test -- --coverage
 
       # Upload coverage data to Codecov (valfritt, beroende på ditt verktyg)
       - name: Upload coverage to Codecov
