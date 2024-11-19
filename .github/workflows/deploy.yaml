@@ -15,7 +15,7 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Set up Node.js
       - name: Set up Node.js
@@ -45,12 +45,13 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Fetch coverage report (adjust path if needed)
       - name: Fetch coverage report
         run: |
-          COVERAGE=$(cat ./coverage/coverage-final.json | jq .total.lines.pct)
+          ls
+          COVERAGE=$(cat ./home/runner/work/test/test/coverage/coverage-final.json | jq .total.lines.pct)
           echo "Test coverage is ${COVERAGE}%"
           if (( $(echo "$COVERAGE < 85" | bc -l) )); then
             echo "Test coverage is below 85%, cannot merge."
