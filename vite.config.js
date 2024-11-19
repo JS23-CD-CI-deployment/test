@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: "./setup-tests.js",
     coverage: {
       provider: "v8",
-      reporter: ["text", "json", "lcov"],
+      reporter: ["text", "json", "lcov", "json-summary"],
       include: ["src/**/*.js", "src/**/*.jsx"],
     },
   },
