@@ -35,9 +35,8 @@ jobs:
 
       # Upload coverage data to Codecov (valfritt, beroende på ditt verktyg)
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
-          file: ./coverage/lcov-report/index.js # Ändra detta beroende på var din täckningsfil finns
           token: ${{ secrets.CODECOV_TOKEN }} # Om du använder Codecov, annars kan du använda något annat
 
   check-coverage:
